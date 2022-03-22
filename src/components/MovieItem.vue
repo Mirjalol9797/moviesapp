@@ -1,5 +1,7 @@
 <template>
-  <div class="movie-item mb-3"></div>
+  <div class="movie-item mb-3">
+    <div class="movie-item-poster" :style="posterBg"></div>
+  </div>
 </template>
 
 <script>
@@ -11,7 +13,36 @@ export default {
       required: true,
     },
   },
+  computed: {
+    posterBg() {
+      return {
+        "background-image": `url(${this.movie.Poster})`,
+      };
+    },
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.movie-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 2qqqqqqqqqqqqqqqqs ease-in;
+  height: 400px;
+}
+.movie-item:hover {
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  transform: scale(1.02);
+}
+.movie-item-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+  background-size: center;
+}
+</style>
