@@ -6,7 +6,6 @@
       :total-rows="total"
       prev-text="prev"
       next-text="next"
-      @change="pageChanged()"
     >
     </b-pagination>
   </div>
